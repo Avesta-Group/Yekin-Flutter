@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:my_puk_application/controllers/utilsControllers/connectivity_controller.dart';
 import 'package:my_puk_application/models/language_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

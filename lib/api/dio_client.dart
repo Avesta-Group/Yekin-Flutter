@@ -1,5 +1,8 @@
+import 'dart:html';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart' show kDebugMode;
+import 'package:my_puk_application/api/dio_exception.dart';
 import 'package:my_puk_application/api/endpoints.dart';
 
 class DioClient {
@@ -20,24 +23,39 @@ class DioClient {
 
   late final Dio _dio;
 
-  Future getResource({required int id,required model}) async {
+  Future getAllResource({required model}) async {
     try {
-      final response = await _dio.get('${Endpoints.baseURL}/$model/$id');
-      print(response);
+      final response = await _dio.get('${Endpoints.baseURL}/$model');
+
+      return response;
     } on DioException catch (err) {
-      final errorMessage = err.toString();
-      throw errorMessage;
+      final errorMessage = err;
+      throw DioExceptionErr.fromDioError(errorMessage);
     } catch (e) {
       if (kDebugMode) print(e);
       throw e.toString();
     }
   }
 
-  Future createResource({required model,body}) async {
+  Future getResource({required int id,required model}) async {
     try {
-      final response = await _dio.post('${Endpoints.baseURL}/$model', data: body.toJson());
-      print(response);
-      // return model.fromJson(response.data);
+      final response = await _dio.get('${Endpoints.baseURL}/$model/$id');
+
+      return response;
+    } on DioException catch (err) {
+      final errorMessage = err;
+      throw DioExceptionErr.fromDioError(errorMessage);
+    } catch (e) {
+      if (kDebugMode) print(e);
+      throw e.toString();
+    }
+  }
+
+  Future createResource({required model,required body}) async {
+    try {
+      final response = await _dio.post('${Endpoints.baseURL}/$model', data: body);
+
+     return response;
     } on DioException catch (err) {
       final errorMessage = err.toString();
       throw errorMessage;
@@ -48,10 +66,11 @@ class DioClient {
   }
 
   
-  Future<void> updateResource({required int id, required String model, required dynamic body}) async {
+  Future updateResource({required int id, required String model, required  body}) async {
     try {
-      final response = await _dio.put('${Endpoints.baseURL}/$model/$id', data: body.toJson());
-      print(response);
+      final response = await _dio.put('${Endpoints.baseURL}/$model/$id', data: body);
+
+      return response;
     } on DioException catch (err) {
       final errorMessage = err.toString();
       throw errorMessage;
@@ -61,9 +80,11 @@ class DioClient {
     }
   }
 
-  Future<void> deleteResource({required int id,required model}) async {
+  Future deleteResource({required int id,required model}) async {
     try {
-      await _dio.delete('${Endpoints.baseURL}/$model/$id');
+     final response = await _dio.delete('${Endpoints.baseURL}/$model/$id');
+
+      return response;
     } on DioException catch (err) {
       final errorMessage = err.toString();
       throw errorMessage;

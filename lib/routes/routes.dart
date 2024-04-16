@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:my_puk_application/screens/connectivity_screen.dart';
 import 'package:my_puk_application/screens/login_screen.dart';
 
 class Routes {

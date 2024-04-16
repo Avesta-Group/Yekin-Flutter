@@ -1,8 +1,10 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_puk_application/api/dio_client.dart';
 import 'package:my_puk_application/components/button_widget.dart';
 import 'package:my_puk_application/components/textfiled_widget.dart';
+import 'package:my_puk_application/models/user_model.dart';
 
 class LoginScreen extends StatelessWidget {
    LoginScreen({super.key});
@@ -80,7 +82,21 @@ class LoginScreen extends StatelessWidget {
                         child: ButtonWidget(
                           text: "login".tr,
                           onPressed: () async {
-                            final response = await dioClient.getResource(id: 2, model: 'users');
+
+                          //  final user = UserModel(
+                          //   name: '_nameController.text',
+                          //   job: '_emailController.text');
+                          //   final response = await dioClient.createResource(model: 'users', body: user);
+
+                          // final user = UserModel(
+                          //   name: "a",
+                          //   job: "a",
+                          //   email: '_nameController.text',
+                          //  );
+
+                          //   final response = await dioClient.updateResource(model: 'users', body: user, id: 1);
+
+                          final response = await dioClient.deleteResource(model: 'users',id: 1);
                             print(response);
                           },
                         ),
