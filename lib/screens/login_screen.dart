@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_puk_application/api/dio_client.dart';
+import 'package:my_puk_application/components/button_widget.dart';
 import 'package:my_puk_application/components/textfiled_widget.dart';
 
 class LoginScreen extends StatelessWidget {
    LoginScreen({super.key});
+
+    final DioClient dioClient = DioClient();
 
     final _userNameController = TextEditingController();
     final _pwdController = TextEditingController();
@@ -71,6 +75,16 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ),
 
+                      Padding(
+                        padding: const EdgeInsets.only(top: 30.0),
+                        child: ButtonWidget(
+                          text: "login".tr,
+                          onPressed: () async {
+                            final response = await dioClient.getResource(id: 2, model: 'users');
+                            print(response);
+                          },
+                        ),
+                      ),
                     ],
                   ),
                 ),

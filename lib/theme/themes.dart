@@ -13,6 +13,7 @@ class Themes {
           seedColor: AppConstants.quinaryColor,
         ),
         
+
         textTheme: const TextTheme(
           displayLarge: TextStyle(
             color: Colors.black,
@@ -24,6 +25,14 @@ class Themes {
             fontSize: 15,
           ),
         ),
+
+
+      textButtonTheme: TextButtonThemeData(
+      style: ButtonStyle(
+        foregroundColor: MaterialStateProperty.all<Color>(AppConstants.background), 
+      ),
+    ),
+
   );
 
 

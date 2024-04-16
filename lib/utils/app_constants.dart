@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:my_puk_application/models/language_model.dart';
 
 class AppConstants {
-  //base query
-   static const String baseUrl = 'https://reqres.in/api';
 
   //Localization
   static const String COUNTRY_CODE = 'country_code';

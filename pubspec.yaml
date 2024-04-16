@@ -38,7 +38,8 @@ dependencies:
   get:
   get_storage: 
   shared_preferences:
-  dio: 
+  dio:
+  connectivity_plus: 
 
 dev_dependencies:
   flutter_test:
