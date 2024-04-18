@@ -1,7 +1,6 @@
-import 'dart:html';
-
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart' show kDebugMode;
+import 'package:my_puk_application/api/auth/interceptors/authorization_interceptor.dart';
 import 'package:my_puk_application/api/dio_exception.dart';
 import 'package:my_puk_application/api/endpoints.dart';
 
@@ -14,16 +13,13 @@ class DioClient {
             receiveTimeout: const Duration(milliseconds: Endpoints.receiveTimeout),
             responseType: ResponseType.json,
           ),
-        );
-        
-        // ..interceptors.addAll([
-        //     AuthorizationInterceptor(),
-        //     LoggerInterceptor(),
-        //   ]);
+        )..interceptors.addAll([
+            AuthorizationInterceptor(),
+          ]);
 
   late final Dio _dio;
 
-  Future getAllResource({required model}) async {
+  Future getResources({required model}) async {
     try {
       final response = await _dio.get('${Endpoints.baseURL}/$model');
 

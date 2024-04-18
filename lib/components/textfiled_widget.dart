@@ -35,12 +35,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
         hintText: widget.hintText,
         border: OutlineInputBorder(
           borderSide: BorderSide(
-            color: Theme.of(context).colorScheme.tertiary,
-          ),
-        ),
-        focusedBorder: OutlineInputBorder( 
-          borderSide: BorderSide(
-            color: Theme.of(context).colorScheme.tertiary, 
+            color: Theme.of(context).colorScheme.primary,
           ),
         ),
         hintStyle: TextStyle(color: Theme.of(context).colorScheme.secondary),

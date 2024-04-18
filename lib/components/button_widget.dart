@@ -3,12 +3,14 @@ import 'package:get/get.dart';
 
 class ButtonWidget extends StatelessWidget {
   final String text;
+  final Color color;
   final VoidCallback onPressed;
 
   const ButtonWidget({
     super.key,
     required this.text,
     required this.onPressed,
+    required this.color,
   });
 
   @override
@@ -17,7 +19,7 @@ class ButtonWidget extends StatelessWidget {
       width: Get.width,
       height: 50,
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primary,
+        color: color,
         borderRadius: BorderRadius.circular(5)
       ),
       child: InkWell(
