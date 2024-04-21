@@ -26,7 +26,14 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextFormField(
+      validator: (value)  {
+        if(value!.isEmpty) {
+            return "Please enter ${widget.labelText.toLowerCase()}!";
+        }
+
+        return null;
+      },
       controller: widget.controller,
       obscureText: widget.obscureText ? _obscureText : false,
       style: TextStyle(color: Theme.of(context).colorScheme.tertiary),

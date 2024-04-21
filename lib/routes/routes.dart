@@ -1,4 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:my_puk_application/middlewares/auth_middleware.dart';
 import 'package:my_puk_application/screens/login_screen.dart';
 
 class Routes {
@@ -10,7 +12,18 @@ class Routes {
 
 final getPages = [
     GetPage(
-     name: Routes.home,
+     name: Routes.login,
      page: () =>  LoginScreen(),
+    ),
+
+     GetPage(
+     name: Routes.home,
+     page: () => const Center(
+      child: Text('Home'),
+     ),
+
+     middlewares: [
+      AuthMiddleware(priority: 1)
+     ]
     ),
 ];
