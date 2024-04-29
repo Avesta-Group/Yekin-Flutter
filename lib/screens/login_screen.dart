@@ -66,7 +66,6 @@ class LoginScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(top: 15.0),
                             child: TextFieldWidget(
-                              labelText: 'Username',
                               hintText: 'Please Input Full userName',
                               controller: _userNameController,
                               onChanged: (value) {},
@@ -76,7 +75,6 @@ class LoginScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(top: 15.0),
                             child: TextFieldWidget(
-                              labelText: 'Password',
                               hintText: 'Please Input Username',
                               obscureText: true,
                               controller: _pwdController,

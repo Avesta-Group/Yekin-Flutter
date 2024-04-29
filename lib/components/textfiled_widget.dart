@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class TextFieldWidget extends StatefulWidget {
-  final String labelText;
   final String hintText;
   final bool obscureText;
   final TextEditingController controller;
@@ -9,7 +8,6 @@ class TextFieldWidget extends StatefulWidget {
 
   const TextFieldWidget({
     super.key,
-    required this.labelText,
     required this.hintText,
     this.obscureText = false,
     required this.controller,
@@ -29,24 +27,50 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
     return TextFormField(
       validator: (value)  {
         if(value!.isEmpty) {
-            return "Please enter ${widget.labelText.toLowerCase()}!";
+            return "Please enter ${widget.hintText.toLowerCase()}!";
         }
 
         return null;
       },
       controller: widget.controller,
       obscureText: widget.obscureText ? _obscureText : false,
-      style: TextStyle(color: Theme.of(context).colorScheme.tertiary),
+      style: Theme.of(context).textTheme.bodyMedium,
       decoration: InputDecoration(
-        labelText: widget.labelText,
         hintText: widget.hintText,
-        border: OutlineInputBorder(
+        hintStyle: TextStyle(color: Theme.of(context).colorScheme.tertiary),
+        enabledBorder: OutlineInputBorder(
+           borderRadius: BorderRadius.circular(10),
           borderSide: BorderSide(
-            color: Theme.of(context).colorScheme.primary,
+            color: Theme.of(context).colorScheme.tertiary,
+            width: 0.5
+          ),
+      
+        ),
+
+        focusedBorder: OutlineInputBorder(
+           borderRadius: BorderRadius.circular(10),
+          borderSide: BorderSide(
+            color: Theme.of(context).colorScheme.tertiary,
+            width: 1
+          ),
+      
+        ),
+
+        errorBorder: OutlineInputBorder(
+           borderRadius: BorderRadius.circular(10),
+          borderSide:const BorderSide(
+            color: Colors.red,
+            width: 0.8
           ),
         ),
-        hintStyle: TextStyle(color: Theme.of(context).colorScheme.secondary),
-        labelStyle: TextStyle(color: Theme.of(context).colorScheme.tertiary),
+
+        focusedErrorBorder:OutlineInputBorder(
+           borderRadius: BorderRadius.circular(10),
+          borderSide:const BorderSide(
+            color: Colors.red,
+            width: 0.8
+          ),
+        ),
         suffixIcon: widget.obscureText
             ? IconButton(
                 icon: Icon(

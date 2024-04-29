@@ -20,7 +20,7 @@ class ButtonWidget extends StatelessWidget {
       height: 50,
       decoration: BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.circular(5)
+        borderRadius: BorderRadius.circular(10)
       ),
       child: InkWell(
           onTap: onPressed,

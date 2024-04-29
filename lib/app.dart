@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
           darkTheme: Themes().darkTheme,
           themeMode:  ThemeMode.light,
           initialBinding: ControllerBindings(),
-          initialRoute: Routes.home,
+          initialRoute: Routes.register,
           getPages: getPages,
         );
       },

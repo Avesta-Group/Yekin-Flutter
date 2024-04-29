@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:my_puk_application/middlewares/auth_middleware.dart';
+import 'package:my_puk_application/screens/authScreens/create_account_screen.dart';
 import 'package:my_puk_application/screens/login_screen.dart';
 
 class Routes {
@@ -14,6 +15,11 @@ final getPages = [
     GetPage(
      name: Routes.login,
      page: () =>  LoginScreen(),
+    ),
+
+   GetPage(
+     name: Routes.register,
+     page: () =>  CreateAccountScreen(),
     ),
 
      GetPage(
