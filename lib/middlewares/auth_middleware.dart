@@ -5,6 +5,7 @@ import 'package:my_puk_application/routes/routes.dart';
 class AuthMiddleware extends GetMiddleware {
 
   @override
+  // ignore: overridden_fields
   int? priority = 1;
 
   AuthMiddleware({this.priority});
@@ -16,7 +17,7 @@ class AuthMiddleware extends GetMiddleware {
      //!AuthService.to.isAuthenticated
        ) {
       // If not authenticated, redirect to the login page
-      return RouteSettings(name: Routes.login);
+      return RouteSettings(name: Routes.home);
     }
     // If authenticated, allow the route to proceed
     //return null;

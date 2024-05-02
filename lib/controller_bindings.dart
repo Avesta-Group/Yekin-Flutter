@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:my_puk_application/controllers/utilsControllers/language_controller.dart';
 import 'package:my_puk_application/controllers/utilsControllers/theme_controller.dart';
 
 class ControllerBindings extends Bindings {

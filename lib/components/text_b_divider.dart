@@ -22,14 +22,14 @@ class TextBetweenDividerWidget extends StatelessWidget {
               child: Container(
               height: 1,
                decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).colorScheme.tertiary,
                 borderRadius: BorderRadius.circular(100)
                ),
              ),
             ),
            Padding(
              padding: const EdgeInsets.only(left:8.0,right: 8.0),
-             child: Text(text,
+             child: Text(text.tr,
              style: Theme.of(context).textTheme.bodyLarge,
              ),
            ),
@@ -37,7 +37,7 @@ class TextBetweenDividerWidget extends StatelessWidget {
               child: Container(
               height: 1,
                decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).colorScheme.tertiary,
                 borderRadius: BorderRadius.circular(100)
                ),
              ),

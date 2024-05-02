@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
           },
           debugShowCheckedModeBanner: false,
           title: 'Refresh Project',
-          locale: localizationController.locale,
+            locale: localizationController.locale,
           translations: Messages(languages: languages),
           fallbackLocale: Locale(
             AppConstants.languages[0].languageCode,
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
           darkTheme: Themes().darkTheme,
           themeMode:  ThemeMode.light,
           initialBinding: ControllerBindings(),
-          initialRoute: Routes.register,
+          initialRoute: Routes.home,
           getPages: getPages,
         );
       },

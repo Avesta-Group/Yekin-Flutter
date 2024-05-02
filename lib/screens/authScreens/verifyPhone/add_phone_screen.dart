@@ -1,29 +1,22 @@
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:my_puk_application/api/dio_client.dart';
 import 'package:my_puk_application/components/button_widget.dart';
-import 'package:my_puk_application/components/dropdownmenu_widget.dart';
-import 'package:my_puk_application/components/text_b_divider.dart';
 import 'package:my_puk_application/components/textfiled_widget.dart';
-import 'package:my_puk_application/screens/authScreens/widgets/have_account_or_no_widget.dart';
-import 'package:my_puk_application/screens/authScreens/widgets/social_media_login_widget.dart';
 import 'package:my_puk_application/utils/app_constants.dart';
+import 'package:get/get.dart';
 
-class CreateAccountScreen extends StatelessWidget {
-   CreateAccountScreen({super.key});
+
+class AddPhoneScreen extends StatelessWidget {
+   AddPhoneScreen({super.key});
 
    final _formKey = GlobalKey<FormState>();
 
     final DioClient dioClient = DioClient();
 
-    final _fullNameController = TextEditingController();
     final _phoneController = TextEditingController();
-    final _pwdController = TextEditingController();
-    final _pwdConfirmController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +75,7 @@ class CreateAccountScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                            
-                           Text('signup'.tr,
+                           Text('enter_phone_number'.tr,
                             style: Theme.of(context).textTheme.bodyLarge,
                            ),
                         
@@ -94,15 +87,6 @@ class CreateAccountScreen extends StatelessWidget {
                            ),
                         
                             Padding(
-                              padding: const EdgeInsets.only(top: 30.0),
-                              child: TextFieldWidget(
-                                hintText: 'fullname'.tr,
-                                controller: _fullNameController,
-                                onChanged: (value) {},
-                              ),
-                            ),
-                        
-                            Padding(
                               padding: const EdgeInsets.only(top: 20.0),
                               child: TextFieldWidget(
                                 hintText: 'phone_number'.tr,
@@ -111,64 +95,28 @@ class CreateAccountScreen extends StatelessWidget {
                               ),
                             ),
 
-                                                    
-                            Padding(
-                              padding: const EdgeInsets.only(top: 20.0),
-                              child: DropdownWidget(value: 'Slemany', items: const ['Slemany','Erbil'],),
-                            ),
-                        
-                              Padding(
-                              padding: const EdgeInsets.only(top: 20.0),
-                              child: TextFieldWidget(
-                                hintText: 'password'.tr,
-                                controller: _pwdController,
-                                obscureText: true,
-                                onChanged: (value) {},
-                              ),
-                            ),
-                        
-                            Padding(
-                              padding: const EdgeInsets.only(top: 20.0),
-                              child: TextFieldWidget(
-                                hintText: 'confirm_password'.tr,
-                                controller: _pwdConfirmController,
-                                obscureText: true,
-                                onChanged: (value) {},
-                              ),
-                            ),
-                        
-                             Padding(
-                              padding: const EdgeInsets.only(top: 30.0),
-                              child: ButtonWidget(
-                                text: "signup".tr,
-                                color: Theme.of(context).colorScheme.primary,
-                                onPressed: () async {
-                                _formKey.currentState!.validate();
-
-                                Get.toNamed('addPhone');
-                                },
-                              ),
-                            ),
-
-                            
-                        const Padding(
-                           padding:  EdgeInsets.only(top: 30.0),
-                            child:  TextBetweenDividerWidget(text:'or_sign_in_with')
-                          ),
-
-
-                        const Padding(
-                           padding:  EdgeInsets.only(top: 30.0),
-                            child:  SocialMediaLoginWidget()
-                          ),
-
-                        const AlreadyHaveAccountWidget(isFromSignin: false,)
                           ],
                         ),
                       ),
                     )),
                    ),
                   ),
+
+
+
+                  Container(
+                              color: AppConstants.white,
+                              padding:  EdgeInsets.only(bottom: Get.height * 0.08,left: AppConstants.appPadding,right: AppConstants.appPadding),
+                              child: ButtonWidget(
+                                text: "continue".tr,
+                                color: Theme.of(context).colorScheme.primary,
+                                onPressed: () async {
+                                _formKey.currentState!.validate();
+
+                                Get.toNamed('verifyPhone');
+                                },
+                              ),
+                            )
               ],
             ),
           ),

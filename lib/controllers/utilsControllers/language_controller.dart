@@ -4,8 +4,6 @@ import 'package:my_puk_application/models/language_model.dart';
 import 'package:my_puk_application/utils/app_constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
-
 class LocalizationController extends GetxController implements GetxService {
   final SharedPreferences sharedPreferences;
 
@@ -13,8 +11,10 @@ class LocalizationController extends GetxController implements GetxService {
     loadCurrentLanguage();
   }
 
-  Locale _locale = Locale(AppConstants.languages[0].languageCode,
-     AppConstants.languages[0].countryCode);
+  Locale _locale = Locale(
+    AppConstants.languages[0].languageCode,
+    AppConstants.languages[0].countryCode,
+  );
 
   int _selectedIndex = 0;
   int get selectedIndex => _selectedIndex;
@@ -23,11 +23,12 @@ class LocalizationController extends GetxController implements GetxService {
   List<LanguageModel> get languages => _languages;
 
   void loadCurrentLanguage() {
-    // only gets called during installation or rebooting
-    _locale = Locale(sharedPreferences.getString(AppConstants.LANGUAGE_CODE) ??
-        AppConstants.languages[0].languageCode,
-        sharedPreferences.getString(AppConstants.COUNTRY_CODE) ??
-            AppConstants.languages[0].countryCode);
+    _locale = Locale(
+      sharedPreferences.getString(AppConstants.LANGUAGE_CODE) ??
+          AppConstants.languages[0].languageCode,
+      sharedPreferences.getString(AppConstants.COUNTRY_CODE) ??
+          AppConstants.languages[0].countryCode,
+    );
 
     for (int index = 0; index < AppConstants.languages.length; index++) {
       if (AppConstants.languages[index].languageCode == _locale.languageCode) {
@@ -53,9 +54,17 @@ class LocalizationController extends GetxController implements GetxService {
   }
 
   void saveLanguage(Locale locale) async {
-    sharedPreferences.setString(
-      AppConstants.LANGUAGE_CODE, locale.languageCode);
+    sharedPreferences.setString(AppConstants.LANGUAGE_CODE, locale.languageCode);
     sharedPreferences.setString(AppConstants.COUNTRY_CODE, locale.countryCode!);
   }
 
+  void changeLanguageByCode(String languageCode) {
+    for (int i = 0; i < _languages.length; i++) {
+      if (_languages[i].languageCode == languageCode) {
+        _selectedIndex = i;
+        setLanguage(Locale(languageCode, _languages[i].countryCode));
+        break;
+      }
+    }
+  }
 }

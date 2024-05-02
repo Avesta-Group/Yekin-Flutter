@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class TextFieldWidget extends StatefulWidget {
   final String hintText;
@@ -27,7 +28,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
     return TextFormField(
       validator: (value)  {
         if(value!.isEmpty) {
-            return "Please enter ${widget.hintText.toLowerCase()}!";
+            return "${'please_enter'.tr} ${widget.hintText.toLowerCase()}!";
         }
 
         return null;

@@ -1,0 +1,28 @@
+{
+    "choose_language": "Ziman hilbijêrin",
+    "english":"Îngilîzî",
+    "arabic":"Erebî",
+    "kurdish":"Kurdî (Soranî)",
+    "kurdish_kurmanji":"Kurdî (Kurmancî)",
+    "signin": "Daxwaz bûn",
+    "signup": "Daxwaz kirin",
+    "continue": "Dawam bike",
+    "forgot_password":"Tîpêşî bixwazin?",
+    "cart": "Çarta",
+    "auth_subtitle": "Îro rojek nû ye. Rûyek te ye. Tu wî şekî li ser wî distînî. Ji bo destpêkirina projeyên xwe daxwaz bibe.",
+    "fullname": "Nav û paşnav",
+    "email_address": "Navnîşana îmêlê",
+    "phone_number": "Hejmara telefonê",
+    "enter_phone_number": "Hejmara telefonê binivîse",
+    "confirm_phone_number": "Hejmara Telefonê piştrast bikin",
+    "confirm_phone_number_subtitle": "Ji bo temamkirina sazkirina piştrastkirina du-faktorî, ji kerema xwe koda têketinê ya 5-hejmarî ku ji jimareya têlefona we re hatî şandin binivîse, bi dawî dibe:",
+    "password": "Şîfre",
+    "confirm_password": "Şîfre piştrast bike",
+    "or_sign_in_with": "An jî daxwaz bibe bi",
+    "google": "Google",
+    "facebook": "Facebook",
+    "already_have_account": "Hesabek hene? ",
+    "not_have_account": "Hesabek tune ye? ",
+    "please_enter": "Ji kerema xwe ve binivîse"
+  }
+  

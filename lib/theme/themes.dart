@@ -46,7 +46,9 @@ class Themes {
         color: AppConstants.hint_text_color,
         fontSize: 15,
         fontFamily: 'Inter',
-      )
+      ),
+
+
     ),
 
     
