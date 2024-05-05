@@ -5,7 +5,7 @@ class BottomNavController extends GetxController {
   var tabIndex = 0.obs;
 
   
- final List<String> navbarTitles =  ['Home','Forum','PUK','Notifications','Profile'];
+ final List<String> navbarTitles =  ['home','forum','puk','notifications','profile'];
 final List<String> navbarIcons =  [AppConstants.home_svg_icon,AppConstants.forum_svg_icon,AppConstants.id_card_svg_icon,AppConstants.notifications_svg_icon,AppConstants.profile_svg_icon];
 
   void changeTabIndex(int index) {

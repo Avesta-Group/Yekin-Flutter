@@ -4,6 +4,7 @@ import 'package:my_puk_application/controller_bindings.dart';
 import 'package:my_puk_application/controllers/utilsControllers/connectivity_controller.dart';
 import 'package:my_puk_application/controllers/utilsControllers/language_controller.dart';
 import 'package:my_puk_application/routes/routes.dart';
+import 'package:my_puk_application/screens/app_events_screen.dart';
 import 'package:my_puk_application/theme/themes.dart';
 import 'package:my_puk_application/utils/app_constants.dart';
 import 'package:my_puk_application/utils/messages.dart';
@@ -22,11 +23,9 @@ class MyApp extends StatelessWidget {
           builder: (context, child) {
             return Obx(() {
               if (connectivityController.connectionType == MConnectivityResult.none) {
-                return const Scaffold(
-                  body: Center(
-                    child: Text('No Internet Connection'),
-                  ),
-                );
+                return AppEventScreen(imgPath: 'assets/images/no_intenet_img.png', title: 'No internet Connection', 
+                                  subTitle: 'Know your driver in advance and be able to view current location in real time on the map',
+                                  buttonTitle: 'Refresh', onPressed: (){});
               } else {
                 return child!;
               }
@@ -44,7 +43,7 @@ class MyApp extends StatelessWidget {
           darkTheme: Themes().darkTheme,
           themeMode:  ThemeMode.light,
           initialBinding: ControllerBindings(),
-          initialRoute: Routes.home,
+          initialRoute: Routes.index,
           getPages: getPages,
         );
       },

@@ -4,19 +4,20 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:my_puk_application/api/dio_client.dart';
 import 'package:my_puk_application/components/button_widget.dart';
+import 'package:my_puk_application/components/textfiled_widget.dart';
 import 'package:my_puk_application/utils/app_constants.dart';
 import 'package:get/get.dart';
-import 'package:flutter_otp_text_field/flutter_otp_text_field.dart';
 
-class VerifyPhoneScreen extends StatelessWidget {
-   VerifyPhoneScreen({super.key});
+
+class CreateNewPasswordScreen extends StatelessWidget {
+   CreateNewPasswordScreen({super.key});
 
    final _formKey = GlobalKey<FormState>();
 
     final DioClient dioClient = DioClient();
 
-     late List<TextEditingController?> controls;
-
+    final _pwdController = TextEditingController();
+    final _pwdConfirmController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -75,38 +76,31 @@ class VerifyPhoneScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                            
-                           Text('confirm_phone_number'.tr,
+                           Text('create_new_password'.tr,
                             style: Theme.of(context).textTheme.bodyLarge,
                            ),
                         
-                           Padding(
-                            padding:const EdgeInsets.only(top: 2.0),
-                            child:Text("${'confirm_phone_number_subtitle'.tr} 1276",
-                            style: Theme.of(context).textTheme.bodySmall,
-                           ),
-                           ),
+                        
+                              Padding(
+                              padding: const EdgeInsets.only(top: 20.0),
+                              child: TextFieldWidget(
+                                hintText: 'password'.tr,
+                                controller: _pwdController,
+                                obscureText: true,
+                                onChanged: (value) {},
+                              ),
+                            ),
 
-                           Padding(
-                              padding: const EdgeInsets.only(top: 40.0),
-                              child:OtpTextField(
-                              numberOfFields: 5,
-                              borderColor: Theme.of(context).colorScheme.tertiary,
-                              showFieldAsBox: true, 
-                              autoFocus: true,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              fieldHeight: Get.height * 0.1,
-                              fieldWidth: Get.width * 0.13,
-                              borderRadius: BorderRadius.circular(10),
-                              enabledBorderColor: Theme.of(context).colorScheme.tertiary,
-                              focusedBorderColor: Theme.of(context).colorScheme.primary,
-                              onCodeChanged: (String code) {         
-                              },
-                              onSubmit: (String verificationCode){
-                                  print('Code entered is $verificationCode');
-                              }, 
-                           ),
-                        ),
+                             Padding(
+                              padding: const EdgeInsets.only(top: 20.0),
+                              child: TextFieldWidget(
+                                hintText: 'confirm_password'.tr,
+                                controller: _pwdConfirmController,
+                                obscureText: true,
+                                onChanged: (value) {},
+                              ),
+                            ),
+
                           ],
                         ),
                       ),
@@ -124,8 +118,6 @@ class VerifyPhoneScreen extends StatelessWidget {
                                 color: Theme.of(context).colorScheme.primary,
                                 onPressed: () async {
                                 _formKey.currentState!.validate();
-
-                                Get.toNamed('createNewPassword');
                                 },
                               ),
                             )

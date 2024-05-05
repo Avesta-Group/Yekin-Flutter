@@ -18,11 +18,26 @@
     "confirm_phone_number_subtitle": "Ji bo temamkirina sazkirina piştrastkirina du-faktorî, ji kerema xwe koda têketinê ya 5-hejmarî ku ji jimareya têlefona we re hatî şandin binivîse, bi dawî dibe:",
     "password": "Şîfre",
     "confirm_password": "Şîfre piştrast bike",
+    "create_new_password": "Şîfreyek Nû Biafirîne",
     "or_sign_in_with": "An jî daxwaz bibe bi",
     "google": "Google",
     "facebook": "Facebook",
     "already_have_account": "Hesabek hene? ",
     "not_have_account": "Hesabek tune ye? ",
-    "please_enter": "Ji kerema xwe ve binivîse"
+    "please_enter": "Ji kerema xwe ve binivîse",
+    "all_we_have_here":"Hemî Em Li vir Hene",
+    "show":"Nîşan Bide",
+    "hide":"Veşêre",
+    "history":"Dîrok",
+    "library":"Pirtûkxane",
+    "election":"Hilbijartin",
+    "home":"mal",
+    "forum":"Forum",
+    "puk":"YNK",
+    "notifications":"Agahdarî",
+    "profile":"Profîl",
+    "see_more":"Zêdetir Binêre",
+    "now_presidency":"Niha Serokatî",
+    "malbands":"Malbands"
   }
   

@@ -17,7 +17,7 @@ class AuthMiddleware extends GetMiddleware {
      //!AuthService.to.isAuthenticated
        ) {
       // If not authenticated, redirect to the login page
-      return RouteSettings(name: Routes.home);
+      return RouteSettings(name: Routes.index);
     }
     // If authenticated, allow the route to proceed
     //return null;

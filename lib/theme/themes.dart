@@ -48,6 +48,18 @@ class Themes {
         fontFamily: 'Inter',
       ),
 
+      headlineMedium: TextStyle(
+        color: AppConstants.white,
+        fontSize: 17,
+        fontFamily: 'Inter',
+      ),
+
+      headlineSmall: TextStyle(
+        color: AppConstants.tertiaryColor,
+        fontSize: 11,
+        fontFamily: 'Inter',
+      ),
+
 
     ),
 
